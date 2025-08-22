@@ -1,0 +1,143 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/* Main grid layout */
+body {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  min-height: 100vh;
+}
+
+/* Header */
+.site-header {
+  grid-area: header;
+  background: #0066cc;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Navigation - flexbox */
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  background: #003366;
+  justify-content: center;
+}
+
+.site-nav li {
+  margin: 0 1rem;
+}
+
+.site-nav a {
+  color: white;
+  text-decoration: none;
+  padding: 1rem;
+  display: block;
+}
+
+.site-nav a:hover {
+  background: #005bb5;
+  border-radius: 4px;
+}
+
+/* Main content grid */
+.main-content {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Content */
+.content-area {
+  background: white;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+/* Cards using flexbox */
+.cards {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background: #007acc;
+  color: white;
+  padding: 1rem;
+  border-radius: 6px;
+  flex: 1;
+  text-align: center;
+}
+
+/* Sidebar */
+.sidebar {
+  background: white;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+/* Footer */
+.site-footer {
+  grid-area: footer;
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+/* Responsive: Tablet */
+@media (max-width: 768px) {
+  .site-nav ul {
+    flex-direction: column;
+  }
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+  .cards {
+    flex-direction: column;
+  }
+}
+
+/* Responsive: Mobile */
+@media (max-width: 480px) {
+  .site-header h1 {
+    font-size: 1.5rem;
+  }
+  .site-nav ul {
+    padding: 0.5rem 0;
+  }
+  .site-nav li {
+    margin: 0.5rem 0;
+  }
+  .card {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+  .sidebar {
+    display: none; /* Hide sidebar on small screens */
+  }
+}
